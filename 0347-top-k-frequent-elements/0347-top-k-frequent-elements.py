@@ -7,11 +7,5 @@ class Solution:
             else:
                 dct[i] = 0
         dct = dict(sorted(dct.items(), key=lambda x: x[1], reverse=True))
-        res = []
-        cnt = 0
-        for i in dct.keys():
-            if cnt == k:
-                break
-            res.append(i)
-            cnt += 1
+        res = list(dct.keys())[:k]
         return res
